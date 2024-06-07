@@ -1,5 +1,5 @@
 import './App.css';
-
+import init_Headlines from './helpers/initHeadlines';
 import { useEffect, useState } from "react";
 
 /*
@@ -27,51 +27,54 @@ function App() {
     
   }, [s1,s2,s3,s4])
 
-
+  const headlines = init_Headlines();
+  console.log(headlines);
   return (
     <div className="App">
 
-      <div className="h-grid">
+      <section className='sources-list'>
+        <div className="sources-grid">
 
-        <div className="v-flex ns-1">
-          <label className="label-position">Source1</label>
-          <input id="SOURCE1" type="checkbox" 
-          onClick={() => {
-              setS1(!s1);
-            }
-          }/>
+          <div className="v-flex ns-all ns-1">
+            <label className="label-position">Source1</label>
+            <input id="SOURCE1" type="checkbox" 
+            onClick={() => {
+                setS1(!s1);
+              }
+            }/>
+          </div>
+
+          <div className="v-flex ns-all ns-2">
+            <label className="label-position">Source2</label>
+            <input id="SOURCE2" type="checkbox"
+            onClick={() => {
+                setS2(!s2);
+              }
+            }/>
+          </div>
+
+          <div className="v-flex ns-all ns-3">
+            <label className="label-position">Source3</label>
+            <input id="SOURCE3" type="checkbox"
+            onClick={() => {
+                setS3(!s3);
+              }
+            }/>
+          </div>
+
+          <div className="v-flex ns-all ns-4">
+            <label className="label-position">Source4</label>
+            <input id="SOURCE4" type="checkbox"
+            onClick={() => {
+                setS4(!s4);
+              }
+            }/>
+          </div>
+
+
+
         </div>
-
-        <div className="v-flex ns-2">
-          <label className="label-position">Source2</label>
-          <input id="SOURCE2" type="checkbox"
-          onClick={() => {
-              setS2(!s2);
-            }
-          }/>
-        </div>
-
-        <div className="v-flex ns-3">
-          <label className="label-position">Source3</label>
-          <input id="SOURCE3" type="checkbox"
-          onClick={() => {
-              setS3(!s3);
-            }
-          }/>
-        </div>
-
-        <div className="v-flex ns-4">
-          <label className="label-position">Source4</label>
-          <input id="SOURCE4" type="checkbox"
-          onClick={() => {
-              setS4(!s4);
-            }
-          }/>
-        </div>
-
-      
-      
-      </div>
+      </section>
 
 
       
