@@ -6,20 +6,18 @@ const init_Headlines = async () => {
             'X-Api-Key': process.env.REACT_APP_API_KEY,
         }
     }
-    const headlines = await 
-    axios.get(`https://newsapi.org/v2/top-headlines/sources?country=us`, config)
+    await axios.get(`https://newsapi.org/v2/top-headlines/sources?country=us&sortBy=popularity`, config)
     .then(data => {
         if (data.status !== 200) {
             return {message: "Error fetching headlines"};
         } else {
-            // console.log(data);
-            return data.data.sources;
+            console.log(data.data);
+            return data.data;
         }
     })
     .catch(error => {
         return error;
     });
-    // console.log(headlines);
 };
 
 export default init_Headlines;
