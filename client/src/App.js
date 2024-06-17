@@ -1,7 +1,7 @@
 import './App.css';
 import init_Headlines from './helpers/initHeadlines';
 import Home from './components/Home';
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 /*
 line the top with clickable input boxes by news source and useState to keep track of clicked value
@@ -14,20 +14,22 @@ make functions to call and change the state of the input boxes
 */
 
 function App() {
-  const [initialized,setInitialized] = useState(false);
+  // const [initialized,setInitialized] = useState(false);
+  var h = init_Headlines();
 
-  useEffect( () => {
-    const h = init_Headlines();
+  // useEffect( () => {
+  //   h = 
 
-    if (h.status === 'ok') {
-      setInitialized(true);
-    }
-  },[])
+  //   if (h.status === 'ok') {
+  //     setInitialized(true);
+  //   } 
+
+  // },[])
   
 
   return (
     <div className="App">
-      <Home props={initialized}/>
+      <Home data={h}/>
     </div>
   );
 }
